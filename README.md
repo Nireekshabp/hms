@@ -1,3 +1,13 @@
+ #  Overview
+ # Hospital Management System is a comprehensive application designed to efficiently manage hospital operations. It covers various aspects of hospital management, including patient details and ward. This project is build using HTML, Python and django framework.
+
+ # Prerequisites
+# Before installing the Hospital Management System, make sure you have the following prerequisites:
+
+Python (3.8 or higher)
+Django (4.0.5)
+A compatible database system (MySQL)
+Web server (Apache)
 # hms
 
 # To run the application
