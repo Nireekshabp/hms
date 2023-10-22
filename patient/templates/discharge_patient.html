@@ -1,0 +1,51 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+	<h3>Discharge Summary</h3>
+
+	<table>
+		<!--thead>
+			<tr>
+				<th>Patient Information</th>
+			</tr>
+		</thead-->
+		<tbody>
+			<tr>
+				<td>First Name</td>
+				<td>{{ patient.first_name }}</td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td>{{ patient.last_name }}</td>
+			</tr>
+			<tr>
+				<td>Patient Id</td>
+				<td>{{ patient.patient_id }}</td>
+			</tr>
+			<tr>
+				<td>DOB</td>
+				<td>{{ patient.dob }}</td>
+			</tr>
+			<tr>
+				<td>Contact Number</td>
+				<td>{{ patient.contact_number }}</td>
+			</tr>
+			<tr>
+				<td>Admission Date</td>
+				<td>{{ patient.admission_date }}</td>
+			</tr>
+			<tr>
+				<td>Ward Number</td>
+				<td>{{ patient.ward_number }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<form action="/discharge_patient/{{patient.id}}" method="POST">{% csrf_token %}
+		<input type="Submit" value="Discharge Patient">
+	</form>

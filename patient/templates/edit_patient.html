@@ -1,0 +1,8 @@
+<html>
+</body>
+	<form method="post" action="/edit_patient/{{id}}">{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Edit Patient">
+	</form>
+</body>
+</html>
