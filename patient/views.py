@@ -8,7 +8,7 @@ from patient.models import Patient
 from patient.forms import PatientForm
 
 
-# Need to add logger
+
 
 @login_required
 def hms_logout(request):
@@ -52,7 +52,7 @@ def index(request):
     return render(request,'index.html')
 
 
-
+@login_required
 def home(request):
     return render(request,'home.html')
 
@@ -86,11 +86,15 @@ def add_patient(request):
                 f.patient_id = get_incremented_patient_id(obj.patient_id)
             f.save()
             return HttpResponseRedirect('/patient_list')
+        else:
+            messages.error(request, 'Please correct the following errors:')
+            return render(request,'add_patient.html',{'form':form})
     else:
         form = PatientForm()
         return render(request,'add_patient.html', {'form': form})
 
 
+@login_required
 def edit_patient(request, id):
     patient = get_object_or_404(Patient, id=id)
 
@@ -109,6 +113,7 @@ def edit_patient(request, id):
             return render(request,'edit_patient.html',{'form':form})
 
 
+@login_required
 def discharge_patient(request, id):
     patient = get_object_or_404(Patient, id=id)
     if request.method == 'GET':
