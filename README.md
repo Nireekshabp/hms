@@ -10,6 +10,11 @@ A compatible database system (MySQL)
 Web server (Apache)
 # hms
 
+# to install 
+
+# Please refer the video for installation process
+ https://youtu.be/Kn1HF3oD19c?si=Rrq6o7RugJ9Om7UQ
+
 # To run the application
 
 python manage.py runserver
